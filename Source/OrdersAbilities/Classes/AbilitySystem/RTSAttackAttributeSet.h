@@ -27,21 +27,21 @@ public:
     UPROPERTY(Category = "Attributes|Attack", BlueprintReadOnly, ReplicatedUsing = OnRep_Damage)
     float Damage;
     UFUNCTION()
-    void OnRep_Damage();
+    void OnRep_Damage(float OldValue);
     static const FGameplayAttribute& DamageAttribute();
 
     /** Time before the attack can be used again, in seconds. */
     UPROPERTY(Category = "Attributes|Attack", BlueprintReadOnly, ReplicatedUsing = OnRep_Cooldown)
     float Cooldown;
     UFUNCTION()
-    void OnRep_Cooldown();
+    void OnRep_Cooldown(float OldValue);
     static const FGameplayAttribute& CooldownAttribute();
 
     /** Attack range, in cm. */
     UPROPERTY(Category = "Attributes|Attack", BlueprintReadOnly, ReplicatedUsing = OnRep_Range)
     float Range;
     UFUNCTION()
-    void OnRep_Range();
+    void OnRep_Range(float OldValue);
     static const FGameplayAttribute& RangeAttribute();
 
     /**
@@ -51,7 +51,7 @@ public:
     UPROPERTY(Category = "Attributes|Attack", BlueprintReadOnly, ReplicatedUsing = OnRep_OutgoingDamageMultiplier)
     float OutgoingDamageMultiplier;
     UFUNCTION()
-    void OnRep_OutgoingDamageMultiplier();
+    void OnRep_OutgoingDamageMultiplier(float OldValue);
     static const FGameplayAttribute& OutgoingDamageMultiplierAttribute();
 
     //~ Begin UAttributeSet Interface

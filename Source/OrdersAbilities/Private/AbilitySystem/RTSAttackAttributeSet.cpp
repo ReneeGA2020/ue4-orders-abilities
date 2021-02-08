@@ -28,9 +28,9 @@ void URTSAttackAttributeSet::GetLifetimeReplicatedProps(TArray<FLifetimeProperty
     DOREPLIFETIME_CONDITION_NOTIFY(URTSAttackAttributeSet, OutgoingDamageMultiplier, COND_None, REPNOTIFY_Always);
 }
 
-void URTSAttackAttributeSet::OnRep_Damage()
+void URTSAttackAttributeSet::OnRep_Damage(float OldValue)
 {
-    GAMEPLAYATTRIBUTE_REPNOTIFY(URTSAttackAttributeSet, Damage);
+    GAMEPLAYATTRIBUTE_REPNOTIFY(URTSAttackAttributeSet, Damage, OldValue);
 }
 
 const FGameplayAttribute& URTSAttackAttributeSet::DamageAttribute()
@@ -40,9 +40,9 @@ const FGameplayAttribute& URTSAttackAttributeSet::DamageAttribute()
     return Attribute;
 }
 
-void URTSAttackAttributeSet::OnRep_Cooldown()
+void URTSAttackAttributeSet::OnRep_Cooldown(float OldValue)
 {
-    GAMEPLAYATTRIBUTE_REPNOTIFY(URTSAttackAttributeSet, Cooldown);
+    GAMEPLAYATTRIBUTE_REPNOTIFY(URTSAttackAttributeSet, Cooldown, OldValue);
 }
 
 const FGameplayAttribute& URTSAttackAttributeSet::CooldownAttribute()
@@ -52,9 +52,9 @@ const FGameplayAttribute& URTSAttackAttributeSet::CooldownAttribute()
     return Attribute;
 }
 
-void URTSAttackAttributeSet::OnRep_Range()
+void URTSAttackAttributeSet::OnRep_Range(float OldValue)
 {
-    GAMEPLAYATTRIBUTE_REPNOTIFY(URTSAttackAttributeSet, Range);
+    GAMEPLAYATTRIBUTE_REPNOTIFY(URTSAttackAttributeSet, Range, OldValue);
 }
 
 const FGameplayAttribute& URTSAttackAttributeSet::RangeAttribute()
@@ -64,9 +64,9 @@ const FGameplayAttribute& URTSAttackAttributeSet::RangeAttribute()
     return Attribute;
 }
 
-void URTSAttackAttributeSet::OnRep_OutgoingDamageMultiplier()
+void URTSAttackAttributeSet::OnRep_OutgoingDamageMultiplier(float OldValue)
 {
-    GAMEPLAYATTRIBUTE_REPNOTIFY(URTSAttackAttributeSet, OutgoingDamageMultiplier);
+    GAMEPLAYATTRIBUTE_REPNOTIFY(URTSAttackAttributeSet, OutgoingDamageMultiplier, OldValue);
 }
 
 const FGameplayAttribute& URTSAttackAttributeSet::OutgoingDamageMultiplierAttribute()
